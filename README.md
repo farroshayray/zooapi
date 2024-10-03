@@ -1,3 +1,6 @@
+# Zoo Management API by Farros
+### This API is designed to manage a zoo, with features to add, remove, and list animals and staff
+[zooapi](https://documenter.getpostman.com/view/37782623/2sAXxLBE2C)
 ## Create The Flask Project
 1. Install Poetry
 ```bash
