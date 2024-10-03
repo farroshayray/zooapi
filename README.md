@@ -1,7 +1,14 @@
 # Zoo Management API by Farros
 ### This API is designed to manage a zoo, with features to add, remove, and list animals and staff
-[zooapi](https://documenter.getpostman.com/view/37782623/2sAXxLBE2C)
-## Create The Flask Project
+- [farroshayray API link](https://enthusiastic-beaver-farroshayray-fa549bb9.koyeb.app/)  
+- [documentation for zooapi](https://documenter.getpostman.com/view/37782623/2sAXxLBE2C)
+
+There are 3 major steps to do:  
+- [Create The Flask Project](#section1)  
+- [Create Docker Image File](#section2)  
+- [Deploy API to Koyeb](#section3)
+## <h2 id="section1">Section 1: Create The Flask Project</h2>
+
 1. Install Poetry
 ```bash
 pip install poetry
@@ -30,8 +37,8 @@ where `main` is your `.py` file to run
 ```bash
 Flask --app main run
 ```
+## <h2 id="section2">Section 2: Create Docker Image File</h2>
 
-## Create Docker Image File
 1. install Docker to your PC [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 2. Create a new file called `Dockerfile` in the root of your project (no extension needed)
 3. Make sure your project structure required `Dockerfile`, `main.py`,`poetry.lock`, `pyproject.toml`, `requirements.txt` and `README.md` in the root of the project
@@ -107,4 +114,16 @@ docker build -t zooapi:latest .
 docker run -d -p 5000:5000 zooapi:latest
 ```
 7. Run localhost:5000 or click the port in the Containers of Docker desktop
-8. finish
+8. if you want to deploy on [Koyeb](https://app.koyeb.com/) you don't have to do step number 5-7
+
+## <h2 id="section3">Section 3: Deploy API to [Koyeb](https://app.koyeb.com/)</h2>
+1. Create a [github](https://github.com) repository and push your project. remember, push the project file, not the folder of the project file
+2. Create a [Koyeb](https://app.koyeb.com/) account and sign up with github
+3. Login Koyeb
+4. Create new service using github repositories
+5. Choose your repository to deploy
+6. Choose your plan and click next
+7. Change Builder to Dockerfile
+8. Change Exposed Ports to 5000
+9. Change Health check configured on ports to 5000
+10. Deploy
