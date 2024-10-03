@@ -32,7 +32,18 @@ or
 .\.venv\Scripts\activate
 ```
 5. create `main.py` file in the root
-6. Run the Flask app
+6. add example lines to the main.py
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def welcome():
+    return "<h1>Hello World !!</h1>"
+```
+7. save the project
+8. Run the Flask app
 where `main` is your `.py` file to run
 ```bash
 Flask --app main run
