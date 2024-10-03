@@ -1,0 +1,98 @@
+{
+    "animals": [
+        {
+            "id": 1,
+            "species": "Elephant",
+            "age": 12,
+            "gender": "Male",
+            "specialRequirements": "Needs a large enclosure with water access"
+        },
+        {
+            "id": 2,
+            "species": "Tiger",
+            "age": 4,
+            "gender": "Female",
+            "specialRequirements": "Requires separate enclosure"
+        },
+        {
+            "id": 3,
+            "species": "Giraffe",
+            "age": 15,
+            "gender": "Female",
+            "specialRequirements": "Needs tall trees and spacious area for roaming"
+        },
+        {
+            "id": 4,
+            "species": "Penguin",
+            "age": 3,
+            "gender": "Male",
+            "specialRequirements": "Requires cold environment with access to water for swimming"
+        },
+        {
+            "id": 5,
+            "species": "Lion",
+            "age": 10,
+            "gender": "Male",
+            "specialRequirements": "Needs a secure area and a separate feeding schedule"
+        },
+        {
+            "id": 6,
+            "species": "cat",
+            "age": 5,
+            "gender": "female",
+            "specialRequirements": "miaaww"
+        },
+        {
+            "id": 7,
+            "species": "orangutan",
+            "age": 5,
+            "gender": "male",
+            "specialRequirements": "like human, can walk with only 2 feet"
+        },
+        {
+            "id": 8,
+            "species": "rajawali",
+            "age": 5,
+            "gender": "male",
+            "specialRequirements": "it can flies"
+        },
+        {
+            "id": 9,
+            "species": "rabbit",
+            "age": 5,
+            "gender": "male",
+            "specialRequirements": "it can jumps"
+        },
+        {
+            "id": 10,
+            "species": "komodo",
+            "age": 5,
+            "gender": "male",
+            "specialRequirements": "it can flies"
+        },
+        {
+            "id": 11,
+            "species": "crocodile",
+            "age": 5,
+            "gender": "male",
+            "specialRequirements": "has a green skin"
+        }
+    ],
+    "employees": [
+        {
+            "id": 1,
+            "name": "Farros Rayhan",
+            "age": 22,
+            "roles": "zoo manager",
+            "schedules": "monday"
+        },
+        {
+            "id": 2,
+            "name": "heru",
+            "age": 25,
+            "gender": "male",
+            "roles": "back office",
+            "schedules": "tuesday"
+        }
+    ]
+}
