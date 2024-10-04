@@ -81,18 +81,19 @@
     "employees": [
         {
             "id": 1,
-            "name": "Farros Rayhan",
-            "age": 22,
-            "roles": "zoo manager",
-            "schedules": "monday"
+            "name": "doe",
+            "email": "agsfda@gmail.com",
+            "phone_number": "0812344566",
+            "roles": "supervisor",
+            "schedules": "friday"
         },
         {
             "id": 2,
-            "name": "heru",
-            "age": 25,
-            "gender": "male",
-            "roles": "back office",
-            "schedules": "tuesday"
+            "name": "john",
+            "email": "ajohn@gmail.com",
+            "phone_number": "087966462812",
+            "roles": "supervisor",
+            "schedules": "friday"
         }
     ]
 }
