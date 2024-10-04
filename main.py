@@ -11,7 +11,7 @@ with open('db.json', 'r') as db:
 
 # Register Blueprints
 app.register_blueprint(animals_blueprint, url_prefix='/animals')
-app.register_blueprint(staff_blueprint, url_prefix='/staff')
+app.register_blueprint(staff_blueprint, url_prefix='/employees')
 
 @app.route("/")
 def welcome():
