@@ -1,21 +1,26 @@
-from flask import Flask, render_template
-from blueprints.animals import animals_blueprint
-from blueprints.staff import staff_blueprint
-import json
+from flask import Flask, jsonify, render_template
+from modules.db import supabase  # Import supabase client from db.py
+from modules.employees import employees_bp
+from modules.animals import animals_bp
 
 app = Flask(__name__)
 
-# Load database
-with open('db.json', 'r') as db:
-    database = json.load(db)
+# Register the blueprints
+app.register_blueprint(employees_bp, url_prefix='/employees')
+app.register_blueprint(animals_bp, url_prefix='/animals')
 
-# Register Blueprints
-app.register_blueprint(animals_blueprint, url_prefix='/animals')
-app.register_blueprint(staff_blueprint, url_prefix='/employees')
-
-@app.route("/")
-def welcome():
+@app.route('/')
+def home():
     return render_template("welcome.html")
+# jsonify({"message": "Welcome to Zoo Management API!"})
+
+@app.route('/test-supabase')
+def test_supabase():
+    try:
+        response = supabase.table('Employees').select('*').limit(1).execute()
+        return jsonify({"message": "Connected to Supabase", "data": response.data}), 200
+    except Exception as e:
+        return jsonify({"message": f"Failed to connect to Supabase: {e}"}), 500
 
 if __name__ == "__main__":
     app.run(debug=True)
