@@ -117,12 +117,12 @@ CMD ["flask", "--app", "main", "run", "--host", "0.0.0.0"]
 - with this step you can check 'images' in your Docker desktop
 - zooapi can be replaced with your project name folder
 ```bash
-docker build -t zooapi:latest .
+docker build -t zoobase:latest .
 ```
 6. Run Docker Container
 - zooapi can be replaced with your project name folder
 ```bash
-docker run -d -p 5000:5000 zooapi:latest
+docker run -d -p 5000:5000 zoobase:latest
 ```
 7. Run localhost:5000 or click the port in the Containers of Docker desktop
 8. if you want to deploy on [Koyeb](https://app.koyeb.com/) you don't have to do step number 5-7
