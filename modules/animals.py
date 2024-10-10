@@ -55,6 +55,11 @@ def update_delete_animal(id):
             return jsonify({"message": "Animal deleted successfully!"}), 200
 
     except Exception as e:
-        if e.code ==  "PGRST116":
+        if hasattr(e, 'code') and e.code == "PGRST116":
             return jsonify({"message": "Animal not found"}), 404
         return jsonify({"message": f"Error: {str(e)}"}), 500
+
+    # except Exception as e:
+    #     if e.code ==  "PGRST116":
+    #         return jsonify({"message": "Animal not found"}), 404
+    #     return jsonify({"message": f"Error: {str(e)}"}), 500

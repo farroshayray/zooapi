@@ -59,8 +59,12 @@ def update_delete_employee(id):
     except Exception as e:
         if hasattr(e, 'code') and e.code == "PGRST116":
             return jsonify({"message": "Employee not found"}), 404
-        else:
-            return jsonify({"error": str(e)}), 500
+        return jsonify({"message": f"Error: {str(e)}"}), 500
+    # except Exception as e:
+    #     if hasattr(e, 'code') and e.code == "PGRST116":
+    #         return jsonify({"message": "Employee not found"}), 404
+    #     else:
+    #         return jsonify({"error": str(e)}), 500
 
     # except Exception as e:
     #     if e.code ==  "PGRST116":
