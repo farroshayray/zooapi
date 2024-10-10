@@ -1,22 +1,19 @@
 import unittest
 from flask import Flask
-from main import app  # Assuming your main file is named app.py
+from main import app  # Asumsikan bahwa file utama Anda bernama main.py
 
 class HomeRouteTestCase(unittest.TestCase):
     def setUp(self):
-        # Set up the test client for Flask
+        # Set up the test client untuk Flask
         self.app = app.test_client()
         self.app.testing = True
 
     def test_home_route(self):
-        # Simulate a GET request to the home route
+        # Simulasi request GET ke home route
         response = self.app.get('/')
         
-        # Assert that the request was successful (status code 200)
-        self.assertEqual(response.status_code, 200)
-        
-        # Assert that the HTML page contains the expected content (assuming welcome.html has the word "Welcome")
-        self.assertIn(b'Welcome', response.data)
+        assert response.status_code == 200
+        assert b'Welcome Animal Lovers!' in response.data
 
 if __name__ == '__main__':
     unittest.main()

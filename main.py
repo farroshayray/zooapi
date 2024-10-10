@@ -14,13 +14,13 @@ def home():
     return render_template("welcome.html")
 # jsonify({"message": "Welcome to Zoo Management API!"})
 
-@app.route('/test-supabase')
-def test_supabase():
-    try:
-        response = supabase.table('Employees').select('*').limit(1).execute()
-        return jsonify({"message": "Connected to Supabase", "data": response.data}), 200
-    except Exception as e:
-        return jsonify({"message": f"Failed to connect to Supabase: {e}"}), 500
+# @app.route('/test-supabase')
+# def test_supabase():
+#     try:
+#         response = supabase.table('Employees').select('*').limit(1).execute()
+#         return jsonify({"message": "Connected to Supabase", "data": response.data}), 200
+#     except Exception as e:
+#         return jsonify({"message": f"Failed to connect to Supabase: {e}"}), 500
 
 if __name__ == "__main__":
     app.run(debug=True)
