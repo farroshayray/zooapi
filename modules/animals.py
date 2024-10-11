@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from modules.db import supabase  # Import supabase client from db.py
+from modules.db import supabase
 
 animals_bp = Blueprint('animals', __name__)
 
