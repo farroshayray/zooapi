@@ -5,8 +5,9 @@
 
 There are 3 major steps to do:  
 - [Create The Flask Project](#section1)  
-- [Create Docker Image File](#section2)  
-- [Deploy API to Koyeb](#section3)
+- [Create Docker Image File](#section2)
+- [Create Test](#section3)
+- [Deploy API to Koyeb](#section4)
 ## <h2 id="section1">Section 1: Create The Flask Project</h2>
 
 1. Install Poetry
@@ -125,9 +126,74 @@ docker build -t zoobase:latest .
 docker run -d -p 5000:5000 zoobase:latest
 ```
 7. Run localhost:5000 or click the port in the Containers of Docker desktop
-8. if you want to deploy on [Koyeb](https://app.koyeb.com/) you don't have to do step number 5-7
+8. if you want to deploy on [Koyeb](https://app.koyeb.com/) you don't have to do step number 5-7  
 
-## <h2 id="section3">Section 3: Deploy API to [Koyeb](https://app.koyeb.com/)</h2>
+## <h2 id="section3">Section 3: Add Tests and Finish Important Test Coverage</h2>  
+1. install `pytest` and `coverage`
+```bash
+poetry add pytest coverage
+```
+2. create folder `tests` in the root of the project
+3. create `conftest.py` file in the root of the project
+4. create `pytest.ini` file in the root of the project
+5. Add initial configuration in the `pytest.ini` file
+```ini
+[pytest]
+addopts = -s
+```
+6.create first test in `test_<testname>.py` file inside the `tests` folder and try this for the first test
+```python
+# content of test_sample.py
+def inc(x):
+    return x + 1
+
+
+def test_answer():
+    assert inc(3) == 5
+```
+7. run the first test
+```bash
+pytest
+```
+the pytest will automatically detect `functions`, `filenames`, `folders`, that have word `test_` in the initial word, for example:  
+```
+└── 📁tests
+    └── 📁animals
+        └── test_animals_delete.py
+        └── test_animals_exception.py
+        └── test_animals_get_all.py
+        └── test_animals_get_id.py
+        └── test_animals_post.py
+        └── test_animals_put.py
+    └── 📁employees
+        └── test_employees_delete.py
+        └── test_employees_exception.py
+        └── test_employees_get_all.py
+        └── test_employees_get_id.py
+        └── test_employees_post.py
+        └── test_employees_put.py
+    └── __init__ copy.py
+    └── __init__.py
+    └── test_main.py
+    └── test_trial.py
+```
+8. run coverage test
+```bash
+coverage run -m pytest
+```
+9. run coverage report  
+to get the test report, and to know the percentages of tests that we cover in our project
+```bash
+coverage report
+```
+10. get detail report of coverage  
+to know codes covered and missed by your tests, we use
+```bash
+coverage html
+```
+it will show you the detail of which lines covered by your test and which lines of codes you missed it
+
+## <h2 id="section4">Section 4: Deploy API to [Koyeb](https://app.koyeb.com/)</h2>
 1. Create a [github](https://github.com) repository and push your project. remember, push the project file, not the folder of the project file
 2. Create a [Koyeb](https://app.koyeb.com/) account and sign up with github
 3. Login Koyeb
