@@ -27,13 +27,13 @@ def test_create_animal_already_exist(client, mock_supabase_table):
         "gender": "Male",
         "specialRequirements": "None"
     }
-    mock_supabase_table.return_value.insert.return_value.execute.return_value.data = {
+    mock_supabase_table.return_value.insert.return_value.execute.return_value.data = [{
         "id": 1,
         "species": "Lion",
         "age": 5,
         "gender": "Male",
         "specialRequirements": "None"
-    }
+    }]
 
     response = client.post('/animals/', json={
         "species": "Lion",

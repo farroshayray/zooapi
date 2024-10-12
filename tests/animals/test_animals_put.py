@@ -19,6 +19,7 @@ def test_update_animal(client, mock_supabase_table):
     })
     assert response.status_code == 200
     assert b"Animal updated successfully!" in response.data
+    assert b"6" in response.data
 
 def test_put_single_animal_notfound(client, mock_supabase_table):
     mock_supabase_table.return_value.select.return_value.eq.return_value.single.return_value.execute.return_value.data = None
